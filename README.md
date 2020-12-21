@@ -281,13 +281,13 @@ select id_pago,nombres,apellidos,sector_vive,nombre_mes,aano,nombre_pago,total f
 
 --
 --Consulta2
---
 La empresa necesita saber los clientes que están en deuda
 select id_pago,nombres,apellidos,sector_vive,nombre_mes,aano,nombre_pago,total from clientes
    join descrpacion_pago on id_pago=id_pagopk where nombre_pago='deuda' order by nombres asc;
 
---
---Consulta3
+
+   
+--Consulta2
 --
 Se desea saber el valor del convenio que tiene cada cliente
 select nombres,apellidos,sector_vive,total_convenio from detallefacturas join clientes on cedula_cliente=cedula_clientepk order by nombres asc 
