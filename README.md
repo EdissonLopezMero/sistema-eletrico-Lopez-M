@@ -272,33 +272,29 @@ ALTER TABLE `medidores`
 
 
 
---
---Cosultas1
---
-La empresa necesita saber que clientes están al dia
+Cosultas
+-
+-
+--La empresa necesita saber que clientes están al dia
+
 select id_pago,nombres,apellidos,sector_vive,nombre_mes,aano,nombre_pago,total from clientes
    join descrpago on id_pago=id_pagopk where nombre_pago='Pagado' order by nombres asc;
 
---
---Consulta2
-La empresa necesita saber los clientes que están en deuda
+-
+-
+--La empresa necesita saber los clientes que están en deuda
+
 select id_pago,nombres,apellidos,sector_vive,nombre_mes,aano,nombre_pago,total from clientes
    join descrpacion_pago on id_pago=id_pagopk where nombre_pago='deuda' order by nombres asc;
 
+-
+-
+--Se desea saber el valor del convenio que tiene cada cliente
 
-   
---Consulta2
---
-Se desea saber el valor del convenio que tiene cada cliente
 select nombres,apellidos,sector_vive,total_convenio from detallefacturas join clientes on cedula_cliente=cedula_clientepk order by nombres asc 
 
---
---Consulta4 
---
-se desea sber que clientes consumes mas energía eléctrica
-select numero_medidor,nombres,apellidos,sector_vive,consumo_luz,numero_lote from medidores 
+-
+-
+--se desea sber que clientes consumes mas energía eléctrica
+-select numero_medidor,nombres,apellidos,sector_vive,consumo_luz,numero_lote from medidores 
         join clientes on cedula_cliente=cedula_clientepk where consumo_luz '200kb' order by nombres asc 
---
---
---
---
